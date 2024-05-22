@@ -4,15 +4,20 @@
 /**
  * Listing 15.9 (p. 224)
  */
+//mongodb+srv://guddn50521:s4z8fMWR1uGufFDR@ut-node.kzuzlta.mongodb.net/?retryWrites=true&w=majority&appName=Ut-node
+
 const mongoose = require("mongoose"),
   Course = require("../models/Course");
-
 // 데이터베이스 연결 설정
-mongoose.connect("mongodb://127.0.0.1:27017/ut-nodejs", {
+mongoose.connect("mongodb+srv://guddn50521:s4z8fMWR1uGufFDR@ut-node.kzuzlta.mongodb.net/", {
   useNewUrlParser: true,
 });
 
-mongoose.connection;
+const db = mongoose.connection;
+db.once("open", () => {
+  console.log("Connected to MONGODB");
+});
+// mongoose.connection;
 
 var courses = [
   {
@@ -98,4 +103,4 @@ setTimeout(() => {
     .catch((error) => {
       console.log(`Error: ${error}`);
     });
-}, 500);
+}, 1500);

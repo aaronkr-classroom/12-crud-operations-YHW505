@@ -8,7 +8,7 @@ const mongoose = require("mongoose"),
   Subscriber = require("../models/subscriber");
 
 // 데이터베이스 연결 설정
-mongoose.connect("mongodb://127.0.0.1:27017/ut-nodejs", {
+mongoose.connect("mongodb+srv://guddn50521:s4z8fMWR1uGufFDR@ut-node.kzuzlta.mongodb.net/", {
   useNewUrlParser: true,
 });
 
